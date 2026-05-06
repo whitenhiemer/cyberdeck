@@ -62,6 +62,25 @@ ctrl_pocket = Part.makeBox(ctrl_pocket_w, PANEL_H, CTRL_T_CLEAR)
 ctrl_pocket.Placement.Base = App.Vector(ctrl_pocket_start, 0, 0)
 panel = panel.cut(ctrl_pocket)
 
+# M3 hardware
+INSERT_D     = 4.5
+INSERT_DEPTH = 6.0
+PIN_D        = 2.5
+PIN_DEPTH    = 5.0
+
+# --- Rear face heat insert holes (Y direction, for rear wall M3 bolts) ---
+# x=62.5mm: below Go cradle floor at rear (chassis x=215mm; floor at y=PANEL_H is 38.1mm, z=20mm — solid)
+ins1 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(62.5, PANEL_H, 20), App.Vector(0, -1, 0))
+panel = panel.cut(ins1)
+# x=135.5mm: above right controller pocket (chassis x=288mm; z=52mm > CTRL_T_CLEAR=43.25mm — solid)
+ins2 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(135.5, PANEL_H, 52), App.Vector(0, -1, 0))
+panel = panel.cut(ins2)
+
+# --- Alignment pin hole at left seam face (mates with Panel A, X direction) ---
+# y=89mm rear margin — solid below cradle floor
+pin = Part.makeCylinder(PIN_D/2, PIN_DEPTH, App.Vector(0, 89, 10), App.Vector(1, 0, 0))
+panel = panel.cut(pin)
+
 obj = doc.addObject("Part::Feature", "Panel_B")
 obj.Shape = panel
 doc.recompute()
@@ -73,5 +92,6 @@ print(f"Outer: {PANEL_W} x {PANEL_H} x {PANEL_T} mm")
 print(f"Tilt: {TILT_DEG}° → tilt_rise = {tilt_rise:.1f}mm")
 print(f"Go cradle cavity: {go_cav_w_in_b:.1f} x {PANEL_H} mm (floor: {FLOOR}mm front → {FLOOR + tilt_rise:.1f}mm rear)")
 print(f"Controller pocket: {ctrl_pocket_w:.1f} x {PANEL_H} x {CTRL_T_CLEAR}mm at x={ctrl_pocket_start:.1f}mm (open at bottom)")
-print(f"Outer right wall: {PANEL_W - ctrl_pocket_end:.1f}mm")
+print(f"Rear inserts: (x=62.5,z=20) and (x=135.5,z=52), depth={INSERT_DEPTH}mm")
+print(f"Alignment pin: seam face x=0, y=89, z=10, depth={PIN_DEPTH}mm")
 print(f"NOTE: Rail groove cross-section TBD — needs calipers on Go side rail before finalizing")

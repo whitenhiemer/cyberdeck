@@ -51,6 +51,26 @@ usbc = Part.makeBox(usbc_wall, usbc_w, usbc_h)
 usbc.Placement.Base = App.Vector(usbc_x_start, usbc_y_pos, usbc_z_pos)
 panel = panel.cut(usbc)
 
+# M3 hardware
+INSERT_D     = 4.5
+INSERT_DEPTH = 6.0
+PIN_D        = 2.5
+PIN_DEPTH    = 5.0
+
+# --- Rear face heat insert holes (Y direction, for rear wall M3 bolts) ---
+# Rear face at y=PANEL_H=91mm — battery cavity only reaches y=81.5mm, so rear face is solid
+# x=17mm local = chassis x=169.5mm (left of battery cavity which starts at x=68mm in F local)
+# x=135mm local = chassis x=287.5mm (right solid wall, battery cavity ends at x=68mm)
+ins1 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(17, PANEL_H, 20), App.Vector(0, -1, 0))
+panel = panel.cut(ins1)
+ins2 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(135, PANEL_H, 20), App.Vector(0, -1, 0))
+panel = panel.cut(ins2)
+
+# --- Alignment pin hole at left seam face (mates with Panel E, X direction) ---
+# y=89mm is outside battery cavity (cavity ends at y=81.5mm) — solid throughout Z
+pin = Part.makeCylinder(PIN_D/2, PIN_DEPTH, App.Vector(0, 89, 20), App.Vector(1, 0, 0))
+panel = panel.cut(pin)
+
 obj = doc.addObject("Part::Feature", "Panel_F")
 obj.Shape = panel
 doc.recompute()
@@ -59,5 +79,7 @@ save_path = "/home/bwoodwar/Projects/cyberdeck/cad/panel_f.FCStd"
 doc.saveAs(save_path)
 print(f"Panel F saved to {save_path}")
 print(f"Outer: {PANEL_W} x {PANEL_H} x {PANEL_T} mm")
-print(f"Battery cavity in this panel: {cav_w_in_f:.1f} x {cav_h} x {cav_d} mm")
+print(f"Battery cavity: {cav_w_in_f:.1f} x {cav_h} x {cav_d} mm")
 print(f"USB-C cutout on right face: {usbc_w} x {usbc_h} mm")
+print(f"Rear inserts: (x=17,z=20) and (x=135,z=20), depth={INSERT_DEPTH}mm")
+print(f"Alignment pin: seam face x=0, y=89, z=20, depth={PIN_DEPTH}mm")

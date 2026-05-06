@@ -44,6 +44,25 @@ cable_ch = Part.makeBox(right_wall_w, CABLE_CH_W, CABLE_CH_H)
 cable_ch.Placement.Base = App.Vector(pocket_w_in_d, cable_ch_y, cable_ch_z)
 panel = panel.cut(cable_ch)
 
+# M3 hardware
+INSERT_D     = 4.5
+INSERT_DEPTH = 6.0
+PIN_D        = 2.5
+PIN_DEPTH    = 5.0
+
+# --- Rear face heat insert holes (Y direction, for rear wall M3 bolts) ---
+# Rear face at y=PANEL_H=91mm is solid (Planck pocket only reaches y=87mm)
+# x=17mm local = chassis x=169.5mm; x=135mm local = chassis x=287.5mm
+ins1 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(17, PANEL_H, 18), App.Vector(0, -1, 0))
+panel = panel.cut(ins1)
+ins2 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(135, PANEL_H, 18), App.Vector(0, -1, 0))
+panel = panel.cut(ins2)
+
+# --- Alignment pin hole at left seam face (mates with Panel C, X direction) ---
+# y=89mm is outside Planck pocket — solid throughout Z
+pin = Part.makeCylinder(PIN_D/2, PIN_DEPTH, App.Vector(0, 89, 18), App.Vector(1, 0, 0))
+panel = panel.cut(pin)
+
 obj = doc.addObject("Part::Feature", "Panel_D")
 obj.Shape = panel
 doc.recompute()
@@ -52,6 +71,8 @@ save_path = "/home/bwoodwar/Projects/cyberdeck/cad/panel_d.FCStd"
 doc.saveAs(save_path)
 print(f"Panel D saved to {save_path}")
 print(f"Outer: {PANEL_W} x {PANEL_H} x {PANEL_T} mm")
-print(f"Planck pocket in this panel: {pocket_w_in_d:.1f} x {PLANCK_POCKET_H} x {PLANCK_POCKET_D} mm")
+print(f"Planck pocket: {pocket_w_in_d:.1f} x {PLANCK_POCKET_H} x {PLANCK_POCKET_D} mm")
 print(f"Solid right wall: {right_wall_w:.1f}mm wide (dock space)")
-print(f"Cable channel (right wall): {right_wall_w:.1f} x {CABLE_CH_W} x {CABLE_CH_H} mm at y={cable_ch_y:.1f}, z={cable_ch_z}")
+print(f"Cable channel (right wall): {right_wall_w:.1f} x {CABLE_CH_W} x {CABLE_CH_H} mm at y={cable_ch_y:.1f}")
+print(f"Rear inserts: (x=17,z=18) and (x=135,z=18), depth={INSERT_DEPTH}mm")
+print(f"Alignment pin: seam face x=0, y=89, z=18, depth={PIN_DEPTH}mm")

@@ -38,6 +38,26 @@ cavity = Part.makeBox(cav_w_in_e, cav_h, cav_d)
 cavity.Placement.Base = App.Vector(battery_x, battery_y, 0)
 panel = base.cut(cavity)
 
+# M3 hardware
+INSERT_D     = 4.5
+INSERT_DEPTH = 6.0
+PIN_D        = 2.5
+PIN_DEPTH    = 5.0
+
+# --- Rear face heat insert holes (Y direction, for rear wall M3 bolts) ---
+# Rear face at y=PANEL_H=91mm — battery cavity only reaches y=81.5mm, so rear face is solid
+# x=17mm: left solid wall (battery cavity starts at x=84.5mm)
+# x=60mm: also left solid wall (< battery_x=84.5mm)
+ins1 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(17, PANEL_H, 20), App.Vector(0, -1, 0))
+panel = panel.cut(ins1)
+ins2 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(60, PANEL_H, 20), App.Vector(0, -1, 0))
+panel = panel.cut(ins2)
+
+# --- Alignment pin hole at right seam face (mates with Panel F, X direction) ---
+# y=89mm is outside battery cavity (cavity ends at y=81.5mm) — solid throughout Z
+pin = Part.makeCylinder(PIN_D/2, PIN_DEPTH, App.Vector(PANEL_W, 89, 20), App.Vector(-1, 0, 0))
+panel = panel.cut(pin)
+
 obj = doc.addObject("Part::Feature", "Panel_E")
 obj.Shape = panel
 doc.recompute()
@@ -46,6 +66,7 @@ save_path = "/home/bwoodwar/Projects/cyberdeck/cad/panel_e.FCStd"
 doc.saveAs(save_path)
 print(f"Panel E saved to {save_path}")
 print(f"Outer: {PANEL_W} x {PANEL_H} x {PANEL_T} mm")
-print(f"Battery cavity in this panel: {cav_w_in_e:.1f} x {cav_h} x {cav_d} mm")
-print(f"Cavity starts at x={battery_x}, y={battery_y:.1f}")
+print(f"Battery cavity: {cav_w_in_e:.1f} x {cav_h} x {cav_d} mm at x={battery_x}, y={battery_y:.1f}")
 print(f"Top wall thickness: {top_wall}mm")
+print(f"Rear inserts: (x=17,z=20) and (x=60,z=20), depth={INSERT_DEPTH}mm")
+print(f"Alignment pin: seam face x={PANEL_W}, y=89, z=20, depth={PIN_DEPTH}mm")
