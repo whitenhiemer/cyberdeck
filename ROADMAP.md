@@ -43,6 +43,7 @@
 | Dimension | Value | Basis |
 |---|---|---|
 | Chassis width | ~305mm | Go full width + side walls |
+| Chassis depth (Y) | 136.7mm | All rows unified — set by controller front-to-back extent |
 | Chassis height | ~314mm | 131mm Go + ~93mm Planck + ~80mm battery + seams |
 | Panel half width | ~150mm | fits 220mm bed |
 | Back wall height (at 15°) | +35mm over front | tan(15°) × 131mm |
@@ -78,6 +79,7 @@ ______/________________\______
 - [ ] Controller rail groove profile (cross-section depth/width — requires calipers on Go side edge)
 - [x] Planck keyboard outer dimensions (234 x 81 x 33mm with acrylic case)
 - [x] MOKiN dock outer dimensions (130 x 55 x 15mm)
+- [ ] Verify screen area is not obstructed by chassis top edge (AB panel top face vs. Go screen bezel)
 - [ ] Define final chassis outer dimensions
 - [ ] Determine exact tilt angle (10-15°)
 - [ ] Define panel split lines and fastener locations
@@ -99,6 +101,7 @@ ______/________________\______
 
 ## Phase 3 — Prototyping
 
+- [ ] PLA first for fit/tolerance verification, then professional ABS or acrylic print for final
 - [ ] Print test pieces at panel seams (fit tolerances)
 - [ ] Print controller rail mockup
 - [ ] Adjust tolerances based on test prints

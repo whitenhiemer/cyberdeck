@@ -5,7 +5,7 @@ import Part
 # Cyberdeck chassis bottom-right panel
 
 PANEL_W = 152.5       # width (X) — right half of chassis
-PANEL_H = 91.0        # depth (Y) — front to back
+PANEL_H = 136.7       # depth (Y) — front to back (matches all rows for flat rear wall)
 PANEL_T = 36.0        # thickness (Z) — 3mm floor + 33mm Planck recess
 
 PLANCK_POCKET_W = 236.0   # 234mm Planck + 1mm clearance each side
@@ -56,7 +56,7 @@ front_ins = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(128, 0, 18), 
 panel = panel.cut(front_ins)
 
 # --- Rear face heat insert holes (Y direction, for rear wall M3 bolts) ---
-# Rear face at y=PANEL_H=91mm is solid (Planck pocket only reaches y=87mm)
+# Rear face at y=PANEL_H=136.7mm is solid (Planck pocket ends at y=109.85mm)
 # x=17mm local = chassis x=169.5mm; x=135mm local = chassis x=287.5mm
 ins1 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(17, PANEL_H, 18), App.Vector(0, -1, 0))
 panel = panel.cut(ins1)
@@ -64,8 +64,8 @@ ins2 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(135, PANEL_H, 18),
 panel = panel.cut(ins2)
 
 # --- Alignment pin hole at left seam face (mates with Panel C, X direction) ---
-# y=89mm is outside Planck pocket — solid throughout Z
-pin = Part.makeCylinder(PIN_D/2, PIN_DEPTH, App.Vector(0, 89, 18), App.Vector(1, 0, 0))
+# y=15mm is in front solid section (Planck pocket starts at y=26.85mm) — solid throughout Z
+pin = Part.makeCylinder(PIN_D/2, PIN_DEPTH, App.Vector(0, 15, 18), App.Vector(1, 0, 0))
 panel = panel.cut(pin)
 
 obj = doc.addObject("Part::Feature", "Panel_D")
@@ -80,4 +80,4 @@ print(f"Planck pocket: {pocket_w_in_d:.1f} x {PLANCK_POCKET_H} x {PLANCK_POCKET_
 print(f"Solid right wall: {right_wall_w:.1f}mm wide (dock space)")
 print(f"Cable channel (right wall): {right_wall_w:.1f} x {CABLE_CH_W} x {CABLE_CH_H} mm at y={cable_ch_y:.1f}")
 print(f"Rear inserts: (x=17,z=18) and (x=135,z=18), depth={INSERT_DEPTH}mm")
-print(f"Alignment pin: seam face x=0, y=89, z=18, depth={PIN_DEPTH}mm")
+print(f"Alignment pin: seam face x=0, y=15, z=18, depth={PIN_DEPTH}mm")

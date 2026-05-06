@@ -26,8 +26,8 @@ PANELS = [
     # Go cradle row
     ("panel_a.stl", [0,    0, ROW_AB_Z], [0.55, 0.35, 0.25, 0.85]),
     ("panel_b.stl", [152.5, 0, ROW_AB_Z], [0.55, 0.35, 0.25, 0.85]),
-    # Rear wall: Y=PANEL_H from front face, X=0, Z=0
-    ("rear_wall.stl", [0, 91, 0], [0.45, 0.45, 0.45, 0.70]),
+    # Rear wall: Y=136.7mm (uniform depth, all rows), X=0, Z=0
+    ("rear_wall.stl", [0, 136.7, 0], [0.45, 0.45, 0.45, 0.70]),
 ]
 
 def load_and_translate(stl_file, translation):
