@@ -20,6 +20,26 @@
 | Back | Closed, structural rear wall |
 | Aesthetic | Utilitarian / functional |
 
+## Known Dimensions
+
+| Component | Dimensions (mm) | Notes |
+|---|---|---|
+| Legion Go (with controllers) | 298.83 x 131 x 40.7 | 854g |
+| Legion Go (base only) | 210 x 131 x 20.1 | 640g |
+| Controller width (each side) | ~44.4mm | (298.83 - 210) / 2 |
+| Controller added depth | ~20.6mm | wraps the back |
+| Planck keyboard | TBD | need to measure |
+| MOKiN dock | TBD | need to measure |
+
+## Chassis Estimates
+
+| Dimension | Value | Basis |
+|---|---|---|
+| Chassis width | ~305mm | Go full width + side walls |
+| Chassis height | ~234mm | 131mm Go + ~93mm Planck section + seam |
+| Panel half width | ~150mm | fits 220mm bed |
+| Back wall height (at 15°) | +35mm over front | tan(15°) × 131mm |
+
 ## Panel Layout
 
 ```
@@ -36,17 +56,17 @@ Side profile:
 ```
          ____________
         /  Go screen \  ← 10-15° tilt
-       /   (38mm deep)\
+       /   (20.1mm)  \
 ______/________________\______
 [    Planck    ] [ dock  ]       ← flat base
 ```
 
 ## Phase 1 — Measurements & Dimensions
 
-- [ ] Measure Legion Go body precisely (without controllers)
-- [ ] Measure controller rail dimensions and attachment mechanism
-- [ ] Measure Planck keyboard (PCB + case)
-- [ ] Measure MOKiN dock body
+- [x] Legion Go body dimensions (base + with controllers)
+- [ ] Controller rail mechanism (slide type, latch, connector pinout)
+- [ ] Planck keyboard outer dimensions (PCB + case)
+- [ ] MOKiN dock outer dimensions
 - [ ] Define final chassis outer dimensions
 - [ ] Determine exact tilt angle (10-15°)
 - [ ] Define panel split lines and fastener locations
