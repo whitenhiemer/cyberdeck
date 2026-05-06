@@ -46,6 +46,11 @@ INSERT_DEPTH = 6.0
 PIN_D        = 2.5
 PIN_DEPTH    = 5.0
 
+# --- Front face heat insert hole (Y direction, shared by AB-CD lower and CD-EF upper brackets) ---
+# Front face fully solid at y=0 (Planck pocket starts at y=4mm)
+front_ins = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(25, 0, 18), App.Vector(0, 1, 0))
+panel = panel.cut(front_ins)
+
 # --- Rear face heat insert holes (Y direction, for rear wall M3 bolts) ---
 # Rear face at y=PANEL_H=91mm is solid (Planck pocket only reaches y=87mm)
 ins1 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(17, PANEL_H, 18), App.Vector(0, -1, 0))

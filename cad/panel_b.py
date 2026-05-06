@@ -68,6 +68,11 @@ INSERT_DEPTH = 6.0
 PIN_D        = 2.5
 PIN_DEPTH    = 5.0
 
+# --- Front face heat insert hole (Y direction, for AB-CD angle bracket upper leg) ---
+# x=128mm local = chassis x=280.5mm (above right controller pocket, z=50mm > 43.25mm — solid)
+front_ins = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(128, 0, 50), App.Vector(0, 1, 0))
+panel = panel.cut(front_ins)
+
 # --- Rear face heat insert holes (Y direction, for rear wall M3 bolts) ---
 # x=62.5mm: below Go cradle floor at rear (chassis x=215mm; floor at y=PANEL_H is 38.1mm, z=20mm — solid)
 ins1 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(62.5, PANEL_H, 20), App.Vector(0, -1, 0))

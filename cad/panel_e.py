@@ -44,6 +44,11 @@ INSERT_DEPTH = 6.0
 PIN_D        = 2.5
 PIN_DEPTH    = 5.0
 
+# --- Front face heat insert hole (Y direction, for CD-EF angle bracket lower leg) ---
+# Front face fully solid at y=0 (battery cavity starts at y=9.5mm)
+front_ins = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(25, 0, 20), App.Vector(0, 1, 0))
+panel = panel.cut(front_ins)
+
 # --- Rear face heat insert holes (Y direction, for rear wall M3 bolts) ---
 # Rear face at y=PANEL_H=91mm — battery cavity only reaches y=81.5mm, so rear face is solid
 # x=17mm: left solid wall (battery cavity starts at x=84.5mm)
