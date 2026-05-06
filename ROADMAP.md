@@ -19,6 +19,7 @@
 | Screen tilt | 10-15° wedge cradle |
 | Back | Closed, structural rear wall |
 | Dock placement | Rear wall cavity (ports → right edge cutouts) |
+| Battery | OHOVIV 50000mAh, placement TBD (3rd row / rear / removable bay) |
 | Handle | Carrying handle or grip (placement TBD) |
 | Aesthetic | Utilitarian / functional |
 
@@ -32,6 +33,7 @@
 | Controller added depth | ~20.6mm | wraps the back |
 | Planck keyboard (V7) | 234 x 81 x 33mm | 510g assembled, 19mm key spacing |
 | MOKiN dock | 130 x 55 x 15mm | built-in USB-C cable 6-8", ports on both long sides |
+| OHOVIV 50000mAh power bank | 134 x 70 x 34mm | 613g, 22.5W, USB-C + 2x USB-A |
 
 ## Chassis Estimates
 
