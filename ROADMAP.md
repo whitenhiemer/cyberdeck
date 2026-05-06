@@ -19,7 +19,7 @@
 | Screen tilt | 10-15° wedge cradle |
 | Back | Closed, structural rear wall |
 | Dock placement | Rear wall cavity (ports → right edge cutouts) |
-| Battery | OHOVIV 50000mAh, placement TBD (3rd row / rear / removable bay) |
+| Battery | OHOVIV 50000mAh, 3rd row, removable sliding bay (exits bottom edge) |
 | Handle | Carrying handle or grip (placement TBD) |
 | Aesthetic | Utilitarian / functional |
 
@@ -40,9 +40,10 @@
 | Dimension | Value | Basis |
 |---|---|---|
 | Chassis width | ~305mm | Go full width + side walls |
-| Chassis height | ~234mm | 131mm Go + ~93mm Planck section + seam |
+| Chassis height | ~314mm | 131mm Go + ~93mm Planck + ~80mm battery + seams |
 | Panel half width | ~150mm | fits 220mm bed |
 | Back wall height (at 15°) | +35mm over front | tan(15°) × 131mm |
+| Total weight (est.) | ~2.3kg | Go 854g + Planck 510g + bank 613g + chassis ~300g |
 
 ## Panel Layout
 
@@ -53,7 +54,9 @@
 ├──────────[C]──────────┬──────────[D]───────────┤
 │    [ Planck bay ]     │  [ dock bay ]          │
 │                       │  (ports → right edge)  │
-└───────────────────────┴────────────────────────┘
+├──────────[E]──────────┴──────────[F]───────────┤
+│       [ battery bay — slides out from bottom ] │
+└────────────────────────────────────────────────┘
 ```
 
 Side profile:
@@ -117,3 +120,5 @@ ______/________________\______
 - All panel seams use M3 bolts + alignment pins
 - Machine-specific local configs (Go firmware, etc.) never committed
 - Controller rails must replicate Go's native slide mechanism — verify exact rail dimensions before CAD
+- Battery bay slides out from bottom edge; USB-C port exposed via cutout, dock cable connects manually
+- Battery bay retention: printed latch or M3 thumb screw
