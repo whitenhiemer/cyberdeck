@@ -79,7 +79,7 @@ ______/________________\______
 - [ ] Controller rail groove profile (cross-section depth/width — requires calipers on Go side edge)
 - [x] Planck keyboard outer dimensions (234 x 81 x 33mm with acrylic case)
 - [x] MOKiN dock outer dimensions (130 x 55 x 15mm)
-- [ ] Verify screen area is not obstructed by chassis top edge (AB panel top face vs. Go screen bezel)
+- [x] Verify screen area is not obstructed — cradle open at y=0, 5.4mm above screen rear edge, 11mm side clearance
 - [ ] Define final chassis outer dimensions
 - [ ] Determine exact tilt angle (10-15°)
 - [ ] Define panel split lines and fastener locations
