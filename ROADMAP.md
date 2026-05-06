@@ -18,6 +18,8 @@
 | Hub | MOKiN 13-in-1, ports exposed on right edge |
 | Screen tilt | 10-15° wedge cradle |
 | Back | Closed, structural rear wall |
+| Dock placement | Rear wall cavity (ports → right edge cutouts) |
+| Handle | Carrying handle or grip (placement TBD) |
 | Aesthetic | Utilitarian / functional |
 
 ## Known Dimensions
@@ -29,7 +31,7 @@
 | Controller width (each side) | ~44.4mm | (298.83 - 210) / 2 |
 | Controller added depth | ~20.6mm | wraps the back |
 | Planck keyboard (V7) | 234 x 81 x 33mm | 510g assembled, 19mm key spacing |
-| MOKiN dock | TBD | need to measure |
+| MOKiN dock | 130 x 55 x 15mm | built-in USB-C cable 6-8", ports on both long sides |
 
 ## Chassis Estimates
 
@@ -66,7 +68,7 @@ ______/________________\______
 - [x] Legion Go body dimensions (base + with controllers)
 - [ ] Controller rail mechanism (slide type, latch, connector pinout)
 - [x] Planck keyboard outer dimensions (234 x 81 x 33mm with acrylic case)
-- [ ] MOKiN dock outer dimensions
+- [x] MOKiN dock outer dimensions (130 x 55 x 15mm)
 - [ ] Define final chassis outer dimensions
 - [ ] Determine exact tilt angle (10-15°)
 - [ ] Define panel split lines and fastener locations
