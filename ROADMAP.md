@@ -71,7 +71,8 @@ ______/________________\______
 ## Phase 1 — Measurements & Dimensions
 
 - [x] Legion Go body dimensions (base + with controllers)
-- [ ] Controller rail mechanism (slide type, latch, connector pinout)
+- [x] Controller rail mechanism (slide top-to-bottom, latch at bottom — Joy-Con style)
+- [ ] Controller rail profile dimensions (height, depth, locking tab position — requires calipers)
 - [x] Planck keyboard outer dimensions (234 x 81 x 33mm with acrylic case)
 - [x] MOKiN dock outer dimensions (130 x 55 x 15mm)
 - [ ] Define final chassis outer dimensions
@@ -119,6 +120,7 @@ ______/________________\______
 
 - All panel seams use M3 bolts + alignment pins
 - Machine-specific local configs (Go firmware, etc.) never committed
-- Controller rails must replicate Go's native slide mechanism — verify exact rail dimensions before CAD
+- Controller rails: slide downward to remove, so chassis side channels must be open at the bottom — controllers drop out when unlatched
+- Rail profile dimensions (height, depth, locking tab) needed before CAD — measure with calipers
 - Battery bay slides out from bottom edge; USB-C port exposed via cutout, dock cable connects manually
 - Battery bay retention: printed latch or M3 thumb screw
