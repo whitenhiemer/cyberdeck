@@ -28,7 +28,7 @@
 | Legion Go (base only) | 210 x 131 x 20.1 | 640g |
 | Controller width (each side) | ~44.4mm | (298.83 - 210) / 2 |
 | Controller added depth | ~20.6mm | wraps the back |
-| Planck keyboard | TBD | need to measure |
+| Planck keyboard (V7) | 234 x 81 x 33mm | 510g assembled, 19mm key spacing |
 | MOKiN dock | TBD | need to measure |
 
 ## Chassis Estimates
@@ -65,7 +65,7 @@ ______/________________\______
 
 - [x] Legion Go body dimensions (base + with controllers)
 - [ ] Controller rail mechanism (slide type, latch, connector pinout)
-- [ ] Planck keyboard outer dimensions (PCB + case)
+- [x] Planck keyboard outer dimensions (234 x 81 x 33mm with acrylic case)
 - [ ] MOKiN dock outer dimensions
 - [ ] Define final chassis outer dimensions
 - [ ] Determine exact tilt angle (10-15°)
