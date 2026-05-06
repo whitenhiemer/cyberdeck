@@ -29,8 +29,11 @@
 |---|---|---|
 | Legion Go (with controllers) | 298.83 x 131 x 40.7 | 854g |
 | Legion Go (base only) | 210 x 131 x 20.1 | 640g |
-| Controller width (each side) | ~44.4mm | (298.83 - 210) / 2 |
-| Controller added depth | ~20.6mm | wraps the back |
+| Controller (each) | 44.8 x 136.7 x 42.25mm | 210g, own 900mAh battery |
+| Controller width per side | ~44.4mm | matches (298.83 - 210) / 2 |
+| Controller overhang (height) | +5.7mm over Go base | 136.7mm vs 131mm — protrudes top/bottom |
+| Controller thickness overhang | +1.55mm over Go body | 42.25mm vs 40.7mm — bulges beyond Go profile |
+| Controller connection | Pogo pins + physical rail | no electrical replication needed in chassis |
 | Planck keyboard (V7) | 234 x 81 x 33mm | 510g assembled, 19mm key spacing |
 | MOKiN dock | 130 x 55 x 15mm | built-in USB-C cable 6-8", ports on both long sides |
 | OHOVIV 50000mAh power bank | 134 x 70 x 34mm | 613g, 22.5W, USB-C + 2x USB-A |
@@ -72,7 +75,7 @@ ______/________________\______
 
 - [x] Legion Go body dimensions (base + with controllers)
 - [x] Controller rail mechanism (slide top-to-bottom, latch at bottom — Joy-Con style)
-- [ ] Controller rail profile dimensions (height, depth, locking tab position — requires calipers)
+- [ ] Controller rail groove profile (cross-section depth/width — requires calipers on Go side edge)
 - [x] Planck keyboard outer dimensions (234 x 81 x 33mm with acrylic case)
 - [x] MOKiN dock outer dimensions (130 x 55 x 15mm)
 - [ ] Define final chassis outer dimensions
@@ -121,7 +124,10 @@ ______/________________\______
 
 - All panel seams use M3 bolts + alignment pins
 - Machine-specific local configs (Go firmware, etc.) never committed
-- Controller rails: slide downward to remove, so chassis side channels must be open at the bottom — controllers drop out when unlatched
-- Rail profile dimensions (height, depth, locking tab) needed before CAD — measure with calipers
+- Controller rails: slide downward to remove — chassis side channels open at bottom
+- Controllers are 5.7mm taller than Go base — top bar must clear controller tops
+- Controller thickness (42.25mm) slightly exceeds Go body (40.7mm) — side channel needs clearance
+- Pogo pins handle electrical connection — chassis only needs to replicate physical rail groove
+- Rail groove cross-section still needs calipers before finalizing side panel CAD
 - Battery bay slides out from bottom edge; USB-C port exposed via cutout, dock cable connects manually
 - Battery bay retention: printed latch or M3 thumb screw
