@@ -84,15 +84,16 @@ ______/________________\______
 
 ## Phase 2 — CAD Design
 
-- [ ] Choose CAD tool (FreeCAD / OpenSCAD / Fusion 360)
-- [ ] Model panel A — Go cradle top-left
-- [ ] Model panel B — Go cradle top-right
-- [ ] Model panel C — Planck bay bottom-left
-- [ ] Model panel D — dock bay bottom-right
+- [x] Choose CAD tool (FreeCAD macros)
+- [x] Model panel A — Go cradle top-left
+- [x] Model panel B — Go cradle top-right
+- [x] Model panel C — Planck bay bottom-left
+- [x] Model panel D — dock bay bottom-right
 - [ ] Model controller rail extensions (left + right)
-- [ ] Model rear wall / closed back
-- [ ] Add M3 bolt holes and alignment pins at panel seams
-- [ ] Internal cable routing channels (Planck USB-C → dock)
+- [x] Model rear wall / closed back
+- [x] Add M3 heat insert holes and alignment pins at panel seams
+- [x] Internal cable routing channels (Planck USB-C → dock)
+- [ ] Model horizontal seam angle bracket clips (separate printed parts, 2 per seam × 2 seams = 4 total)
 - [ ] Fit check / dry assembly review
 
 ## Phase 3 — Prototyping
