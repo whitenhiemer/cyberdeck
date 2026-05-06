@@ -1,3 +1,5 @@
-# FreeCAD backup files
+# FreeCAD generated files
+*.FCStd
 *.FCStd1
 *.FCBak
+cad/__pycache__/
