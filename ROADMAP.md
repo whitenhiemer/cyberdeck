@@ -89,11 +89,11 @@ ______/________________\______
 - [x] Model panel B — Go cradle top-right
 - [x] Model panel C — Planck bay bottom-left
 - [x] Model panel D — dock bay bottom-right
-- [ ] Model controller rail extensions (left + right)
+- [x] Model controller rail extensions (left + right) — groove profile placeholder, needs calipers
 - [x] Model rear wall / closed back
 - [x] Add M3 heat insert holes and alignment pins at panel seams
 - [x] Internal cable routing channels (Planck USB-C → dock)
-- [ ] Model horizontal seam angle bracket clips (separate printed parts, 2 per seam × 2 seams = 4 total)
+- [x] Model horizontal seam angle bracket clips (separate printed parts, 2 per seam × 2 seams = 4 total)
 - [ ] Fit check / dry assembly review
 
 ## Phase 3 — Prototyping
