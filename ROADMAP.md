@@ -96,7 +96,7 @@ ______/________________\______
 - [x] Add M3 heat insert holes and alignment pins at panel seams
 - [x] Internal cable routing channels (Planck USB-C → dock)
 - [x] Model horizontal seam angle bracket clips (separate printed parts, 2 per seam × 2 seams = 4 total)
-- [ ] Round all sharp external edges (fillets/chamfers on outer corners before final print)
+- [x] Round all sharp external edges — 1.5mm chamfer on front-face and outer-side corners (apply_chamfers.py)
 - [ ] Fit check / dry assembly review
 
 ## Phase 3 — Prototyping
