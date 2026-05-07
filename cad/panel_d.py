@@ -14,7 +14,7 @@ PLANCK_POCKET_D = 33.0    # full Planck case depth
 CHASSIS_W = 305.0         # full chassis width (for centering)
 
 planck_x_chassis = (CHASSIS_W - PLANCK_POCKET_W) / 2.0   # 34.5mm from chassis left
-planck_y = (PANEL_H - PLANCK_POCKET_H) / 2.0             # 4.0mm from front edge
+planck_y = (PANEL_H - PLANCK_POCKET_H) / 2.0             # 26.85mm from front edge
 pocket_z = PANEL_T - PLANCK_POCKET_D                      # 3.0mm floor remains below
 
 # Panel D starts at chassis x=152.5 — pocket continues from the seam
@@ -39,6 +39,11 @@ pocket = Part.makeBox(pocket_w_in_d, PLANCK_POCKET_H, PLANCK_POCKET_D)
 pocket.Placement.Base = App.Vector(0, planck_y, pocket_z)
 panel = base.cut(pocket)
 
+# Front-face throat: opens keyboard bay to the user (mirrors Panel C throat)
+throat = Part.makeBox(pocket_w_in_d, planck_y, PLANCK_POCKET_D)
+throat.Placement.Base = App.Vector(0, 0, pocket_z)
+panel = panel.cut(throat)
+
 # Cable channel through right wall — Planck USB-C into dock space
 cable_ch = Part.makeBox(right_wall_w, CABLE_CH_W, CABLE_CH_H)
 cable_ch.Placement.Base = App.Vector(pocket_w_in_d, cable_ch_y, cable_ch_z)
@@ -51,7 +56,7 @@ PIN_D        = 2.5
 PIN_DEPTH    = 5.0
 
 # --- Front face heat insert hole (Y direction, shared by AB-CD lower and CD-EF upper brackets) ---
-# x=128mm local = chassis x=280.5mm (right solid wall; front face fully solid at y=0)
+# x=128mm local = chassis x=280.5mm (right solid wall; throat cut ends at x=pocket_w_in_d=118mm)
 front_ins = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(128, 0, 18), App.Vector(0, 1, 0))
 panel = panel.cut(front_ins)
 
@@ -64,8 +69,8 @@ ins2 = Part.makeCylinder(INSERT_D/2, INSERT_DEPTH, App.Vector(135, PANEL_H, 18),
 panel = panel.cut(ins2)
 
 # --- Alignment pin hole at left seam face (mates with Panel C, X direction) ---
-# y=15mm is in front solid section (Planck pocket starts at y=26.85mm) — solid throughout Z
-pin = Part.makeCylinder(PIN_D/2, PIN_DEPTH, App.Vector(0, 15, 18), App.Vector(1, 0, 0))
+# y=120mm is in rear solid section (pocket ends at y=109.85mm, throat cut ends at y=26.85mm)
+pin = Part.makeCylinder(PIN_D/2, PIN_DEPTH, App.Vector(0, 120, 18), App.Vector(1, 0, 0))
 panel = panel.cut(pin)
 
 obj = doc.addObject("Part::Feature", "Panel_D")
@@ -80,4 +85,5 @@ print(f"Planck pocket: {pocket_w_in_d:.1f} x {PLANCK_POCKET_H} x {PLANCK_POCKET_
 print(f"Solid right wall: {right_wall_w:.1f}mm wide (dock space)")
 print(f"Cable channel (right wall): {right_wall_w:.1f} x {CABLE_CH_W} x {CABLE_CH_H} mm at y={cable_ch_y:.1f}")
 print(f"Rear inserts: (x=17,z=18) and (x=135,z=18), depth={INSERT_DEPTH}mm")
-print(f"Alignment pin: seam face x=0, y=15, z=18, depth={PIN_DEPTH}mm")
+print(f"Throat cut: x=0..{pocket_w_in_d:.1f}, y=0..{planck_y:.2f}, z={pocket_z}..{PANEL_T} mm")
+print(f"Alignment pin: seam face x=0, y=120, z=18, depth={PIN_DEPTH}mm")
