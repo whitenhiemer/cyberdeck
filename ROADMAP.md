@@ -99,6 +99,17 @@ ______/________________\______
 - [x] Round all sharp external edges — 1.5mm chamfer on front-face and outer-side corners (apply_chamfers.py)
 - [x] Fit check / dry assembly review (62/62 software geometry checks pass)
 
+## Variant: No-Rails (cad/no-rails/)
+
+Alternative design for use as handheld — controllers detach and the Go is removed from the chassis entirely.
+
+- [x] Panel A/B without controller rail channels (`cad/no-rails/panel_a.py`, `panel_b.py`)
+- [x] Geometric fit check (18/18 pass — same rear wall, brackets, C–F panels)
+- [x] Chamfer script for no-rails A/B (`cad/no-rails/apply_chamfers.py`)
+- Panels C, D, E, F, rear_wall, bracket_clip — unchanged, use main `cad/` versions
+
+Key difference: 46.5mm solid outer walls in place of 3mm wall + 40mm controller pocket. Go base (210mm) cradles identically; controllers are not accommodated.
+
 ## Phase 3 — Prototyping
 
 - [ ] PLA first for fit/tolerance verification, then professional ABS or acrylic print for final
