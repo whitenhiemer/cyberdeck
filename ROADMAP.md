@@ -97,7 +97,7 @@ ______/________________\______
 - [x] Internal cable routing channels (Planck USB-C → dock)
 - [x] Model horizontal seam angle bracket clips (separate printed parts, 2 per seam × 2 seams = 4 total)
 - [x] Round all sharp external edges — 1.5mm chamfer on front-face and outer-side corners (apply_chamfers.py)
-- [ ] Fit check / dry assembly review
+- [x] Fit check / dry assembly review (62/62 software geometry checks pass)
 
 ## Phase 3 — Prototyping
 

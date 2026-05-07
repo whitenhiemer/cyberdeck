@@ -23,7 +23,7 @@ top_wall = PANEL_T - cav_d          # 5mm top wall
 
 # Battery centered in chassis
 battery_x = (CHASSIS_W - cav_w) / 2.0   # 84.5mm from chassis left
-battery_y = (PANEL_H - cav_h) / 2.0     # 9.5mm from front edge
+battery_y = (PANEL_H - cav_h) / 2.0     # 32.35mm from front edge
 
 # In Panel E, cavity goes from battery_x to PANEL_W (seam)
 cav_w_in_e = PANEL_W - battery_x    # ~68mm

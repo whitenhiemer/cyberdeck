@@ -22,7 +22,7 @@ cav_d = BATTERY_T + CLEARANCE       # 35mm
 # Battery centered in chassis; Panel F starts at x=152.5
 battery_x_chassis = (CHASSIS_W - cav_w) / 2.0    # 84.5mm from chassis left
 battery_right_chassis = battery_x_chassis + cav_w  # 220.5mm from chassis left
-battery_y = (PANEL_H - cav_h) / 2.0               # 9.5mm from front edge
+battery_y = (PANEL_H - cav_h) / 2.0               # 32.35mm from front edge
 
 # In Panel F local coords (origin at seam = chassis x=152.5)
 # Cavity from x=0 (seam) to x=(battery_right_chassis - PANEL_W)
